@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserComponent } from './user.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EventComponent } from './event/event.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
         children: [
           { path: 'home', component: UserHomeComponent },
           { path: 'profile', component: ProfileComponent },
+          { path: 'event', component: EventComponent }, 
           { path: '', redirectTo: 'home', pathMatch: 'full' }
         ]
       }

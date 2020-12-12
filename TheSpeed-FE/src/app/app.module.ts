@@ -13,13 +13,14 @@ import { UserService } from './shared/service/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './shared/service/auth.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     LoginComponent,
     RegisterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
