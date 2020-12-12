@@ -4,7 +4,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { EventComponent } from './event/event.component';
 
 
 const routes: Routes = [
