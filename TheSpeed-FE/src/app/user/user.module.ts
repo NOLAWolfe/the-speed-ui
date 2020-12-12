@@ -7,6 +7,8 @@ import { UserNavComponent } from './user-nav/user-nav.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user.component';
 import { AngularMaterialsModule } from '../shared/angular-materials/angular-materials.module';
+import { EventComponent } from './event/event.component';
+
 
 
 
@@ -16,6 +18,7 @@ import { AngularMaterialsModule } from '../shared/angular-materials/angular-mate
     UserNavComponent,
     ProfileComponent,
     UserComponent,
+    EventComponent
   ],
   imports: [
     CommonModule,
