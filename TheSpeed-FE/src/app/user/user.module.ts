@@ -9,7 +9,7 @@ import { UserComponent } from './user.component';
 import { AngularMaterialsModule } from '../shared/angular-materials/angular-materials.module';
 import { EventComponent } from './event/event.component';
 import { UserCreateComponent } from './user-create/user-create.component'; 
-
+import { ProfileGeneralComponent } from '../Profile/profile-general/profile-general.component';
 
 
 
@@ -20,7 +20,8 @@ import { UserCreateComponent } from './user-create/user-create.component';
     ProfileComponent,
     UserComponent,
     EventComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    ProfileGeneralComponent
   ],
   imports: [
     CommonModule,
