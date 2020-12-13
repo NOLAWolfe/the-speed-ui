@@ -4,12 +4,13 @@ import { CommonModule } from '@angular/common';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { UserRoutingModule } from './user-routing.module';
 import { UserNavComponent } from './user-nav/user-nav.component';
-import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user.component';
 import { AngularMaterialsModule } from '../shared/angular-materials/angular-materials.module';
 import { EventComponent } from './event/event.component';
-import { UserCreateComponent } from './user-create/user-create.component'; 
+import { UserCreateComponent } from './user-create/user-create.component';
 import { ProfileGeneralComponent } from '../Profile/profile-general/profile-general.component';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
@@ -17,11 +18,12 @@ import { ProfileGeneralComponent } from '../Profile/profile-general/profile-gene
   declarations: [
     UserHomeComponent,
     UserNavComponent,
-    ProfileComponent,
+    UserProfileComponent,
     UserComponent,
     EventComponent,
     UserCreateComponent,
-    ProfileGeneralComponent
+    ProfileGeneralComponent,
+    UserSettingsComponent
   ],
   imports: [
     CommonModule,

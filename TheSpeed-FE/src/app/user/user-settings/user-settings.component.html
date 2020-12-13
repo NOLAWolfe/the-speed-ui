@@ -1,0 +1,33 @@
+<nav aria-label="breadcrumb" class="main-breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a [routerLink]="['../user-profile']" routerLinkActive="router-link-active" ><img src="https://img.icons8.com/ios-filled/25/000000/back.png"/></a></li>
+    <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+    <li class="breadcrumb-item"><a href="javascript:void(0)">Privacy and Settings</a></li>
+  </ol>
+  
+</nav>
+
+<div class="card mt-3">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+      <span class="text-secondary"><a  class="hoverButtons" [routerLink]="[ 'profile-update' ]"><strong>Account Info</strong></a></span>
+    </li>
+
+    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+      <span class="text-secondary"><a  class="hoverButtons" [routerLink]="[ 'edit-profile' ]"><strong>Edit Profile</strong></a></span>
+      
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+      <span class="text-secondary"><a  class="hoverButtons" [routerLink]="[ 'privacy' ]"><strong>Privacy</strong></a></span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+      <span class="text-secondary"><a  class="hoverButtons" [routerLink]="[ 'notifications' ]"><strong>Notifications</strong></a></span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+      <span class="text-secondary"><a  class="hoverButtons" [routerLink]="[ 'block-list' ]"><strong>Blocked Users</strong></a></span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+      <span class="text-secondary"><a class="hoverButtons" style="cursor: pointer;" (click)="onLogout()"><strong>Logout</strong></a></span>
+    </li>
+  </ul>
+</div>

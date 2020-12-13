@@ -4,8 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { UserComponent } from './user.component';
 import { UserHomeComponent } from './user-home/user-home.component';
-import { ProfileComponent } from './profile/profile.component';
 import { EventComponent } from './event/event.component';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,13 @@ const routes: Routes = [
         path: '',
         children: [
           { path: 'home', component: UserHomeComponent },
-          { path: 'profile', component: ProfileComponent },
+          {
+            path: 'user-profile', component: UserProfileComponent,
+            children: [
+
+            ]
+          },
+          { path: 'user-settings', component: UserSettingsComponent },
           { path: 'event', component: EventComponent },
           { path: '', redirectTo: 'home', pathMatch: 'full' }
         ]

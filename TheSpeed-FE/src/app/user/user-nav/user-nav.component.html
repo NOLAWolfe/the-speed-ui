@@ -4,16 +4,18 @@
 
       <a class="landing-logo" routerLink='home'><img src="assets/img/TheSpeedCropped2.jpg" alt=""></a>
 
-      <span class="example-fill-remaining-space"></span>
+      <!-- <span class="example-fill-remaining-space"></span> -->
+      
+      <span></span>
+      <a class="hoverButtons" [routerLink]="[ 'create' ]"><strong><img src="https://img.icons8.com/ios-filled/25/000000/create-new.png"/></strong></a> 
+      <span></span>
 
       <span></span>
-      <a class="hoverButtons" [routerLink]="[ 'event' ]"><strong>Events</strong></a> 
+      <a class="hoverButtons" [routerLink]="[ 'event' ]"><strong><img src="https://img.icons8.com/ios-filled/25/000000/f1-race-car-top-veiw.png"/></strong></a> 
       <span></span>
       
-      <a  class="hoverButtons" [routerLink]="[ 'profile' ]"><strong>Profile</strong></a>
+      <a  class="hoverButtons" [routerLink]="[ 'user-profile' ]"><strong><img src="https://img.icons8.com/ios-filled/25/000000/user.png"/></strong></a>
       
-      <a class="hoverButtons" style="cursor: pointer;" (click)="onLogout()"><strong>Logout</strong></a>
-
     </mat-toolbar>
   </header>
 </div>
