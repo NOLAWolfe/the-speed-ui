@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { LandingComponent } from './landing/landing.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LandingComponent } from './core/landing/landing.component';
+import { LoginComponent } from './core/login/login.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+import { RegisterComponent } from './core/register/register.component';
+
 
 
 const routes: Routes = [
