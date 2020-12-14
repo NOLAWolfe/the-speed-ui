@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileGeneralComponent implements OnInit {
 
   constructor() {
-
   }
 
   ngOnInit(): void {
