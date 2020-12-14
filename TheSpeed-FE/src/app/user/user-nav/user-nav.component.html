@@ -3,31 +3,31 @@
     <mat-toolbar class="app-toolbar" style="background-image: linear-gradient(to bottom, wheat, gray,white, white, white, white, wheat);">
       
         <div class="logo-container">
-          <a class="landing-logo" routerLink='home'><img src="assets/img/TheSpeedCropped2.jpg" alt=""></a>
+          <a class="landing-logo" routerLink='home'><img [src]="LOGO_NAV" alt="" style="max-height: 30px;"></a>
         </div>
 
-        <div style="float:center; border-radius: 9px; border: outset; border-color:gainsboro; border-width: 1px;">
+        <div style="float:center; border-radius: 9px; border: outset; border-color:gainsboro; border-width: 1px; max-height: 30px;">
           <!-- margin-top: 40px; margin-right: 200px; -->
           <input class="slideOutProfileFuzzySearch" type="text" placeholder="search"
-            style="text-align: center; border-radius: 9px; border: outset; border-color:gainsboro;  border-width: .75px; padding: 4px;" />
+            style="text-align: center; border-radius: 9px; border: outset; border-color:gainsboro;  border-width: .75px; padding: 4px; max-height: 30px;" />
         </div>
 
         <div class="icon-container">
           <div>
             <a class="hoverButtons" [routerLink]="[ 'home' ]"><strong><img
-                  src="https://img.icons8.com/ios-filled/25/000000/home.png" /></strong></a>
+                  [src]="NAV_HOME" /></strong></a>
           </div>
           <div>
             <a class="hoverButtons" [routerLink]="[ 'user-create' ]"><strong><img
-                  src="https://img.icons8.com/ios-filled/25/000000/create-new.png" /></strong></a>
+              [src]="NAV_CREATE" /></strong></a>
           </div>
           <div>
             <a class="hoverButtons" [routerLink]="[ 'event' ]"><strong><img
-                  src="https://img.icons8.com/ios-filled/25/000000/f1-race-car-top-veiw.png" /></strong></a>
+              [src]="NAV_EVENTS" /></strong></a>
           </div>
           <div>
             <a class="hoverButtons" [routerLink]="[ 'user-profile' ]"><strong><img
-                  src="https://img.icons8.com/ios-filled/25/000000/user.png" /></strong></a>
+              [src]="NAV_PROFILE" /></strong></a>
           </div>
         </div>
      
