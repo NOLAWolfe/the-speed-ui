@@ -1,0 +1,20 @@
+<div id=infiniteContainer> 
+
+    <thead>
+        <tr>
+          <th (click)="timeSequenceOrder()">Post Date time</th>
+          <th (click)="recentActivityOrder()">Recent Drafting</th>
+          <th>Access Post</th>
+          <th>Type of Post</th>
+        </tr>
+      </thead>
+      <tbody id="scrollable" (scroll)="onScroll()">
+        <tr *ngFor="let post of this.filteredPosts; let index =index;">
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        
+        </tr>
+      </tbody>
+</div>
