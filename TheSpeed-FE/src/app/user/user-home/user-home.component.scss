@@ -1,28 +1,15 @@
-.fuzzyLabel{
-    padding-right: 4px; 
-    padding-left: 2px; 
-    background: rgba(255, 165, 0, 0.23);
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding: 2px;
-    padding-left: 9px;
-    margin: 2px; 
-}
 
-.slideOutProfileFuzzySearch:hover + .fuzzyLabel{
-    background-color: yellow;
-    -webkit-animation: mymove 1s infinite;
-    -moz-animation: mymove 1s infinite;
-    -o-animation: mymove 1s infinite;
-    animation: mymove 1s infinite;     
+  .mat-grid-tile div {    
+    margin: 2rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;   
+}  
+.mat-grid-tile .mat-figure {
+ justify-content: flex-start !important ;
+ align-items: flex-start !important;
+ display: flex;
+ align-items: center;
 }
-
-@keyframes mymove {
-    0%   {top: 0px;width:100px;height: 100px;}
-    25%  {top: 200px;width:100px;height: 100px;}
-    50%  {top: 100px;width:100px;height: 100px;}
-    75%  {top: 200px;width:100px;height: 100px;}
-    100% {top: 0px;width:100px;height: 100px;}
-  }

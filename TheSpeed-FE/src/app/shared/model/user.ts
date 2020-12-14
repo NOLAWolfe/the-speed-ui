@@ -5,6 +5,11 @@ export class User {
     lastname: string;
     email: string;
     picture: string;
+    website: string;
+    location: string;
+    // twitter: string;
+    // instragram: string;
+    // facebook: string;
 
     constructor(
         id: number,
@@ -12,7 +17,9 @@ export class User {
         firstname: string,
         lastname: string,
         email: string,
-        picture: string
+        picture: string,
+        website: string,
+        location: string
     ) {
         this.id = id;
         this.username = username;
@@ -20,5 +27,7 @@ export class User {
         this.lastname = lastname;
         this.email = email;
         this.picture = picture;
+        this.website = website;
+        this.location = location;
     }
 }

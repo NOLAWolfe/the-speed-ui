@@ -1,48 +1,36 @@
-<div class="wrapper">
+<div class="container">
   <header>
-    <mat-toolbar color="wheat">
-
-      <a class="landing-logo" routerLink='home'><img src="assets/img/TheSpeedCropped2.jpg" alt=""></a>
-
-      <!-- <span class="example-fill-remaining-space"></span> -->
+    <mat-toolbar class="app-toolbar" style="background-image: linear-gradient(to bottom, wheat, gray,white, white, white, white, wheat);">
       
-      <span></span>
-      <a class="hoverButtons" [routerLink]="[ 'create' ]"><strong><img src="https://img.icons8.com/ios-filled/25/000000/create-new.png"/></strong></a> 
-      <span></span>
+        <div class="logo-container">
+          <a class="landing-logo" routerLink='home'><img src="assets/img/TheSpeedCropped2.jpg" alt=""></a>
+        </div>
 
-      <span></span>
-      <a class="hoverButtons" [routerLink]="[ 'event' ]"><strong><img src="https://img.icons8.com/ios-filled/25/000000/f1-race-car-top-veiw.png"/></strong></a> 
-      <span></span>
-      
-      <a  class="hoverButtons" [routerLink]="[ 'user-profile' ]"><strong><img src="https://img.icons8.com/ios-filled/25/000000/user.png"/></strong></a>
-      
+        <div style="float:center; border-radius: 9px; border: outset; border-color:gainsboro; border-width: 1px;">
+          <!-- margin-top: 40px; margin-right: 200px; -->
+          <input class="slideOutProfileFuzzySearch" type="text" placeholder="search"
+            style="text-align: center; border-radius: 9px; border: outset; border-color:gainsboro;  border-width: .75px; padding: 4px;" />
+        </div>
+
+        <div class="icon-container">
+          <div>
+            <a class="hoverButtons" [routerLink]="[ 'home' ]"><strong><img
+                  src="https://img.icons8.com/ios-filled/25/000000/home.png" /></strong></a>
+          </div>
+          <div>
+            <a class="hoverButtons" [routerLink]="[ 'user-create' ]"><strong><img
+                  src="https://img.icons8.com/ios-filled/25/000000/create-new.png" /></strong></a>
+          </div>
+          <div>
+            <a class="hoverButtons" [routerLink]="[ 'event' ]"><strong><img
+                  src="https://img.icons8.com/ios-filled/25/000000/f1-race-car-top-veiw.png" /></strong></a>
+          </div>
+          <div>
+            <a class="hoverButtons" [routerLink]="[ 'user-profile' ]"><strong><img
+                  src="https://img.icons8.com/ios-filled/25/000000/user.png" /></strong></a>
+          </div>
+        </div>
+     
     </mat-toolbar>
   </header>
 </div>
-
-<!-- <div class="wrapper">
-  <header>
-    <a class="landing-logo" routerLink='home'><img src="assets/img/TheSpeedCropped2.jpg" alt=""></a>
-    <mat-sidenav-container class="sidenav-container">
-      <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
-        (closed)="events.push('close!')">
-      </mat-sidenav>
-      <mat-sidenav-content>
-          <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p>
-          <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
-          <p>Events:</p>
-          <div class="example-events">
-            <div *ngFor="let e of events">{{e}}</div>
-          </div>
-      </mat-sidenav-content>
-
-
-      <span class="example-fill-remaining-space"></span>
-
-      <span></span>
-      <a [routerLink]="[ 'profile' ]"><strong>Profile</strong></a>
-      <a style="cursor: pointer;" (click)="onLogout()"><strong>Logout</strong></a>
-
-    </mat-sidenav-container>
-  </header>
-</div> -->
