@@ -12,6 +12,8 @@ import { ProfileGeneralComponent } from '../profile/profile-general/profile-gene
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserUpdatesComponent } from './user-updates/user-updates.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -30,9 +32,10 @@ import { UserUpdatesComponent } from './user-updates/user-updates.component';
   imports: [
     CommonModule,
     UserRoutingModule,
-    AngularMaterialsModule
-
-
+    AngularMaterialsModule,
+    FormsModule,
+    // NgbModule,
+    ReactiveFormsModule,
   ],
   exports: [
     UserNavComponent
