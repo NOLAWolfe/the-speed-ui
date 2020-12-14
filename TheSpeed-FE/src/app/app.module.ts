@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './shared/service/auth.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,8 @@ import { AuthService } from './shared/service/auth.service';
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule
+  ],
+  exports: [
   ],
   providers: [UserService, AuthService],
   bootstrap: [AppComponent]

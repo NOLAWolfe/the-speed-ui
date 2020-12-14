@@ -1,8 +1,32 @@
-<div>
-    <app-user-nav></app-user-nav>
+<div class="user-container">
+  <div class="container">
+    <mat-grid-list cols="4" rowHeight="3:2">
+      <mat-grid-tile [colspan]="4" [rowspan]="1">
+        <div>
+          <app-user-nav></app-user-nav>
+        </div>
+      </mat-grid-tile>
+
+
+
+      <div class="container">
+        <section>
+          <div class="posts-container">
+            <mat-grid-tile [colspan]="3" [rowspan]="4">
+              <div>
+                <router-outlet></router-outlet>
+              </div>
+
+            </mat-grid-tile>
+          </div>
+        </section>
+        <div class="updates-container">
+          <mat-grid-tile [colspan]="1" [rowspan]="4">
+            <app-user-updates></app-user-updates>
+          </mat-grid-tile>
+        </div>
+      </div>
+
+    </mat-grid-list>
+  </div>
 </div>
-
-
-<router-outlet></router-outlet>
-
-

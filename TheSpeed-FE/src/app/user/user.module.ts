@@ -8,9 +8,10 @@ import { UserComponent } from './user.component';
 import { AngularMaterialsModule } from '../shared/angular-materials/angular-materials.module';
 import { EventComponent } from './event/event.component';
 import { UserCreateComponent } from './user-create/user-create.component';
-import { ProfileGeneralComponent } from '../Profile/profile-general/profile-general.component';
+import { ProfileGeneralComponent } from '../profile/profile-general/profile-general.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserUpdatesComponent } from './user-updates/user-updates.component';
 
 
 
@@ -23,7 +24,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     EventComponent,
     UserCreateComponent,
     ProfileGeneralComponent,
-    UserSettingsComponent
+    UserSettingsComponent,
+    UserUpdatesComponent
   ],
   imports: [
     CommonModule,
