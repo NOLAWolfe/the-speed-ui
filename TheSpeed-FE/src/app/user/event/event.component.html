@@ -1,13 +1,54 @@
-<div>
+<div id="eventsHolder">
   <h1>Global Event Page</h1>
   <br>
   <h2>This Page will hold:</h2>
-  <table>
-    <tr>
-      <li>Globally Posted Events hosted by users & sponsered events</li>
+ 
+
+    <select id=sorter (change)="sortByDates()">
+      <option value="lastActivity"> Last Activity Stamp</option>
+      <option value="createdDate"> Date Created</option>
+     
+    </select>
+    <select id=filter (change)="filterPostsEvents()"> 
+      <option value="both"> Both </option>
+      <option value="events"> Events </option>
+      <option value="posts"> Posts </option>
+    </select>
+    <input type="text" type="text" style="color: transparent" id="keypadCenter" (keydown)="onKeyDownEvent($event)" >
+  <table id=globalEventsFeed>
+    <br>
+    <tr *ngFor ="let card of this.cardArray;let i = index" class="card-block" >
+      <div style="display: none;" *ngIf="setTheTablePass(i)"> </div>
+      <br>
+      <div class="lstActivity">Last Activity: {{card.lastActivity}}</div>
+      <br>
+      <div id="{{card.type}}-{{i}}" class="subpopUp" style="visibility: hidden;">Scheduled at {{card.object.scheduledTime}}, located at {{card.object.place}}</div> 
+      <br>
+      <div class="card" style="width: 20rem" > 
+          <img class="card-img-top" src="..." 
+                  alt="Card image cap"> 
+                  
+          <div class="card-block" (mouseout)="mouseLeave(card.type, i, i)" (mouseover)="mouseOver(card.type ,i,i)" > 
+              <h4 class="card-title">{{card.object.eventName}}</h4> 
+              <p class="card-text"> 
+                {{card.description}} 
+              </p> 
+              <br>
+              <a href="#" class="btn btn-primary" (mouseover)="mouseOver(card.type ,i,-1)" (mouseout)="mouseLeave(card.type, i, -1)"> 
+                  Go to {{card.type}} 
+              </a> 
+             <br>
+          </div> 
+      </div> <div id="{{i}}-{{card.type}}-{{i}}" style="display: inline-block; padding: 5px;border-top-right-radius: 100px; visibility: hidden;background-image: linear-gradient(to bottom, wheat, gray,white, white, white, white, wheat);">Created on {{card.timeDateStamp}}, by yxxxx</div>
+      <br>
+      <br><br>
+      </tr>
+  </table>
+ 
+  <br>
+  <br>
+  <li>Globally Posted Events hosted by users & sponsered events</li>
       <li>Events are shown through a zip code radius</li>
       <li>events are showm in a grid display system</li>
       <li>tbd</li>
-    </tr>
-  </table>
 </div>

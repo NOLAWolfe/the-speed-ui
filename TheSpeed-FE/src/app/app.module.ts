@@ -12,6 +12,8 @@ import { LandingComponent } from './core/landing/landing.component';
 import { LoginComponent } from './core/login/login.component';
 import { RegisterComponent } from './core/register/register.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpService } from './shared/service/http.service';
 
 
 
@@ -28,11 +30,12 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
     AngularMaterialsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [
   ],
-  providers: [UserService, AuthService],
+  providers: [UserService, AuthService, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

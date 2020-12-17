@@ -1,0 +1,68 @@
+@-webkit-keyframes fadeIn {
+    0% {opacity: 20%;}
+    100% {opacity: 1;}
+ }
+ 
+ @keyframes fadeIn {
+    0% {opacity: 20%;}
+    100% {opacity: 1;}
+ }
+ .subpopUp{
+     margin: -1.8px;
+     
+ }
+ .card-block{
+   opacity: 0.975;
+   border-radius: 10px;
+   margin-bottom: 20px;
+}
+#keypadCenter{
+    position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 3%;
+}
+ .lstActivity{
+    border-style: outset;
+    padding: 4px;
+    padding-left: 20px;
+    border-top-right-radius: 200px;
+    border-left: none;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    max-width: 300px;
+ }
+ .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+ }
+ .animated {
+
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+ }
+ 
+ .animatedOut {
+
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+ }
+ .fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+ }
+
+ @-webkit-keyframes fadeOut {
+    0% {opacity: 60%;}
+    100% {opacity: 0;}
+ }
+ 
+ @keyframes fadeOut {
+    0% {opacity: 60%;}
+    100% {opacity: 0;}
+ }
