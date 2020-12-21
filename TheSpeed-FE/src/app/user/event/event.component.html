@@ -14,18 +14,26 @@
       <option value="events"> Events </option>
       <option value="posts"> Posts </option>
     </select>
-    <input type="text" type="text" style="color: transparent" id="keypadCenter" (keydown)="onKeyDownEvent($event)" >
+
+    <div class="container">
+      
+  
+    </div>
+
+    <input type="text" class="grow" type="text" style="color: transparent; display: none;" id="keypadCenter" (keydown)="onKeyDownEvent($event)" >
   <table id=globalEventsFeed>
     <br>
     <tr *ngFor ="let card of this.cardArray;let i = index" class="card-block" >
+
+
       <div style="display: none;" *ngIf="setTheTablePass(i)"> </div>
       <br>
       <div class="lstActivity">Last Activity: {{card.lastActivity}}</div>
       <br>
-      <div id="{{card.type}}-{{i}}" class="subpopUp" style="visibility: hidden;">Scheduled at {{card.object.scheduledTime}}, located at {{card.object.place}}</div> 
+      <div id="{{card.type}}-{{doTheWork(i)}}" class="subpopUp" style="visibility: hidden;">Scheduled at {{card.object.scheduledTime}}, located at {{card.object.place}}</div> 
       <br>
       <div class="card" style="width: 20rem" > 
-          <img class="card-img-top" src="..." 
+          <img class="card-img-top" src="{{card.object.url}}" 
                   alt="Card image cap"> 
                   
           <div class="card-block" (mouseout)="mouseLeave(card.type, i, i)" (mouseover)="mouseOver(card.type ,i,i)" > 
@@ -34,14 +42,16 @@
                 {{card.description}} 
               </p> 
               <br>
-              <a href="#" class="btn btn-primary" (mouseover)="mouseOver(card.type ,i,-1)" (mouseout)="mouseLeave(card.type, i, -1)"> 
+              <button type="button" data-toggle="modal" [attr.data-target]="'#'+i +'-modal'" 
+              class="btn btn-primary" style="display: inline-block;" (mouseover)="mouseOver(card.type ,i,-1)" (mouseout)="mouseLeave(card.type, i, -1)"> 
                   Go to {{card.type}} 
-              </a> 
+            </button> 
+              <div id="{{i}}-{{card.type}}-{{i}}" style="display: inline-block; padding: 5px;border-top-right-radius: 100px; visibility: hidden;background-image: linear-gradient(to bottom, wheat, gray,white, white, white, white, wheat);">Created on {{card.timeDateStamp}}, by yxxxx</div>
+
              <br>
           </div> 
-      </div> <div id="{{i}}-{{card.type}}-{{i}}" style="display: inline-block; padding: 5px;border-top-right-radius: 100px; visibility: hidden;background-image: linear-gradient(to bottom, wheat, gray,white, white, white, white, wheat);">Created on {{card.timeDateStamp}}, by yxxxx</div>
-      <br>
-      <br><br>
+      </div>
+
       </tr>
   </table>
  

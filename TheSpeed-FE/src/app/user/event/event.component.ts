@@ -6,6 +6,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { Event } from 'src/app/shared/model/event';
 import { SpeedObject } from 'src/app/shared/model/speedObject';
 import { HttpService } from 'src/app/shared/service/http.service';
+import {Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-event',
@@ -18,6 +19,8 @@ export class EventComponent implements OnInit {
   cardArray: Array<SpeedObject> = [];
   eventsIndex: number = 0;
   primaryFilter:string = "lastActivity"
+  //--search bar variables
+  
 
   pushFromEager(data):SpeedObject{
     let dat = new SpeedObject();
@@ -28,7 +31,7 @@ export class EventComponent implements OnInit {
         dat.object = data.object;
         return dat
   }
-  constructor(@Inject(DOCUMENT) private document: Document, private service: HttpService) {
+  constructor(@Inject(DOCUMENT) private document: Document, private service: HttpService, private renderer: Renderer2 ) {
 
     this.service.loadInitial().subscribe(data => {
 
@@ -48,12 +51,13 @@ export class EventComponent implements OnInit {
 
         this.backEndValuesCopy.push(this.pushFromEager(data))
       });
-      console.log(this.cardArray);
 
     });
     this.sortByLastActivity(); 
     
   }
+ 
+
   sortByDates(){
     let selec:HTMLSelectElement= document.getElementById("sorter") as HTMLSelectElement; 
     let opts:HTMLCollectionOf<HTMLOptionElement> = selec.options
@@ -66,12 +70,12 @@ export class EventComponent implements OnInit {
   filterPostsEvents(){
    let selec:HTMLSelectElement= document.getElementById("filter") as HTMLSelectElement; 
    let opts:HTMLCollectionOf<HTMLOptionElement> = selec.options
-   console.log(opts)
+  // console.log(opts)
    this.cardArray=this.backEndValues
    if( opts[selec.selectedIndex].value == "posts"){
       for(let k =0 ; k< this.cardArray.length; k++){
           if(this.cardArray[k].type == "event"){
-            console.log("splicing")
+         //   console.log("splicing")
             this.cardArray.splice(k,1);
             
             
@@ -80,7 +84,7 @@ export class EventComponent implements OnInit {
    } else if( opts[selec.selectedIndex].value == "events"){
     for(let k =0 ; k< this.cardArray.length; k++){
         if(this.cardArray[k].type == "post"){
-          console.log("splicing")
+         // console.log("splicing")
          
           this.cardArray.splice(k,1);
           
@@ -103,6 +107,38 @@ export class EventComponent implements OnInit {
     }
   }
 
+  ngAfterViewInit(){
+
+
+  }
+  doTheWork(i:number):number{
+    if(document.getElementById(i+"-modal") == null ){
+    let modList = document.getElementById("modal-list");
+    let copy: SpeedObject[] = this.backEndValues; 
+ console.log(modList)
+      modList.innerHTML =  modList.innerHTML.toString() +`<div id="${i}-modal" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+   
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title">${copy[i].type}</h4>
+         </div>
+         <div class="modal-body">
+           <p>${copy[i].description}</p>
+           
+         </div>
+         <div class="modal-footer">
+         <button class="btn btn-primary">Go to Full Event </button>  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+       </div>
+   
+     </div>
+     </div>`;     
+    }
+   return i
+  }
+
   sortByDateCreated(){
     this.cardArray.sort((a,b) => this.dateCreatedCompare(a, b))
     this.primaryFilter = "dateCreated"
@@ -122,8 +158,8 @@ export class EventComponent implements OnInit {
       dateA.setHours(parseInt(timeb[0]), parseInt(timeb[1]),parseInt(timeb[2]) );
       
       rtrn = (dateA.getUTCFullYear() === dateB.getUTCFullYear() )? 0 : (dateA.getUTCFullYear() < dateB.getUTCFullYear()? 1:-1);
-      console.log("A: "+dateA.getUTCFullYear() +" B: "+dateB.getUTCFullYear()+ " = "+rtrn);
-      console.log("A: "+dateA.toTimeString() +" B: "+dateB.toTimeString()+ " = "+rtrn);
+     // console.log("A: "+dateA.getUTCFullYear() +" B: "+dateB.getUTCFullYear()+ " = "+rtrn);
+     // console.log("A: "+dateA.toTimeString() +" B: "+dateB.toTimeString()+ " = "+rtrn);
     
       return rtrn; 
   }
@@ -192,13 +228,13 @@ export class EventComponent implements OnInit {
     
     this.eventsIndex = this.cardArray.length-1;
     //console.log("bottom: "+bottom +" vs "+ Math.round(this.document.documentElement.scrollTop) )
-    console.log("index is: "+this.eventsIndex , " backend "+  this.backEndValues.length)
+  //  console.log("index is: "+this.eventsIndex , " backend "+  this.backEndValues.length)
     let bottom: number = this.document.documentElement.scrollHeight - this.document.documentElement.clientHeight
-    console.log(Math.round(bottom)+1 == Math.round(this.document.documentElement.scrollTop))
+ /*   console.log(Math.round(bottom)+1 == Math.round(this.document.documentElement.scrollTop))
     console.log(Math.round(bottom)+1)
-    console.log(Math.round(this.document.documentElement.scrollTop) )
+    console.log(Math.round(this.document.documentElement.scrollTop) ) */
     if ( (Math.round(bottom)+1 ==Math.round(this.document.documentElement.scrollTop)|| Math.round(bottom)==Math.round(this.document.documentElement.scrollTop) ) && this.eventsIndex < this.backEndValues.length) {
-      console.log("inside scroll")
+    //  console.log("inside scroll")
       let dat:SpeedObject = new SpeedObject();
         dat.description = this.backEndValues[this.eventsIndex].description
         dat.lastActivity = this.backEndValues[this.eventsIndex].lastActivity;
